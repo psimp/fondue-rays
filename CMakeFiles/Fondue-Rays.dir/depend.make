@@ -8,11 +8,14 @@ CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/batches/te
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/rasterizables/lightmanager.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/rasterizables/meshmanager.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/rasterizables/model.h
+CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/modelvoxelizer.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/raymarch.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/raytracer.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/renderpass.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/rprimitives.h
-CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/voxelizer.h
+CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/scenevoxelizer.h
+CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/terrain.h
+CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/renderers/terrainvoxelizer.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/scenes/camera.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/3d/scenes/view.h
 CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o: src/graphics/glwrappers/framebuffer.h
@@ -154,9 +157,9 @@ CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphi
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/rasterizables/meshmanager.h
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/rasterizables/model.cpp
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/rasterizables/model.h
+CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/renderers/modelvoxelizer.h
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/renderers/renderpass.h
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/renderers/rprimitives.h
-CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/renderers/voxelizer.h
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/scenes/camera.h
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/3d/scenes/view.h
 CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o: src/graphics/glwrappers/framebuffer.h

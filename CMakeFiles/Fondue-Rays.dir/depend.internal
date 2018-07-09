@@ -9,11 +9,14 @@ CMakeFiles/Fondue-Rays.dir/interfaces/raymarch.cpp.o
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/rasterizables/lightmanager.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/rasterizables/meshmanager.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/rasterizables/model.h
+ /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/modelvoxelizer.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/raymarch.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/raytracer.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/rprimitives.h
- /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/voxelizer.h
+ /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/scenevoxelizer.h
+ /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/terrain.h
+ /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/terrainvoxelizer.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/scenes/camera.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/scenes/view.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/glwrappers/framebuffer.h
@@ -155,9 +158,9 @@ CMakeFiles/Fondue-Rays.dir/src/graphics/3d/rasterizables/model.cpp.o
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/rasterizables/meshmanager.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/rasterizables/model.cpp
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/rasterizables/model.h
+ /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/modelvoxelizer.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/rprimitives.h
- /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/voxelizer.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/scenes/camera.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/scenes/view.h
  /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/glwrappers/framebuffer.h

@@ -49,6 +49,12 @@ namespace Fondue { namespace graphics {
             mShader->setUniformBlockBinding("BoundingBoxes", VIEWSPACE_BBOX_UBO_BINDING);
             mShader->setUniformBlockBinding("Orientations", VIEWSPACE_ORIENTATION_UBO_BINDING);
             mShader->setUniformBlockBinding("SampleHemisphere", HEMISPHERE_SAMPLES_BINDING);
+
+            mShader->setUniform1i("iChannel0", CH0_MAP);
+            mShader->setUniform1i("iChannel1", CH1_MAP);
+            mShader->setUniform1i("iChannel3", CH3_MAP);
+            mShader->setUniform1i("terrainSDF", TERRAIN_SDF);
+
             mShader->disable();
 
         }

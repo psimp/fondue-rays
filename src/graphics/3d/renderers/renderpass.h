@@ -31,25 +31,12 @@ namespace Fondue { namespace graphics {
 #define TEX_ARRAY_C3                        8
 #define TEX_ARRAY_C1                        9
 
-#define BRDF_CONVOLUTION                    10
+#define TERRAIN_SDF                         10
 
-#define CONVOLUTER_SPECULAR_OUT             11
-#define CONVOLUTER_DIFFUSE_OUT              12
-#define CONVOLUTER_IN                       13
-
-#define CUBER_OUT                           14
-#define CUBER_IN                            15
-
-#define FBO_LIGHTS1                         16
-#define FBO_LIGHTS2                         17
-#define FBO_LIGHTS3                         18
-
-#define FBO_LIGHT_POS_BUFFER                19
-#define FBO_LIGHT_NORM_BUFFER               20
-#define FBO_LIGHT_FLUX_BUFFER               21
-#define FBO_LIGHT_DEPTH_BUFFER              22
-
-#define SHADOW_MAP                          23
+#define CH0_MAP                             24
+#define CH1_MAP                             25
+#define CH2_MAP                             26
+#define CH3_MAP                             27
 
     template <class T, class S>
     class RenderPass
@@ -58,6 +45,7 @@ namespace Fondue { namespace graphics {
     protected:
 
         const uint SCENE_GRID_SIZE = 512;
+        const uint TERRAIN_GRID_SIZE = 512 * 2;
 
         primitives rprims;
 

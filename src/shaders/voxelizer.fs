@@ -21,9 +21,11 @@ layout(std140) uniform Orientations
     mat4 Orients[MAX_VIEWSPACE_MESHES];
 };
 
+const int defaultGridSize = 512;
+
 uniform uint layer;
 
-uniform int gridSize = 512;
+uniform int gridSize = defaultGridSize;
 
 out vec4 outColor;
 
@@ -43,11 +45,10 @@ float pack_ints(int a, int b)
     return (a * 64.0) + b;
 }
 
-float scale = 2.56 * 512/gridSize;
+float scale = 2.56 * defaultGridSize/gridSize;
 float box(int i, const in vec3 from)
 {
      mat4 orient = Orients[i];
-     orient[3] /= scale; 
      vec3 f = (orient * vec4(from, 1.0)).xyz - ceil(Bounds[i].xyz / 2 / scale);
      vec3 d = (abs(f - vec3(gridSize/2)) - ceil(Bounds[i].xyz / 2 / scale));
      return (min(hmax(d), 0.0f) + length(max(d, vec3(0.0))));
@@ -56,10 +57,9 @@ float box(int i, const in vec3 from)
 float model(int i, in vec3 from )
 {
     mat4 orient = Orients[i];
-    orient[3] /= scale; 
-    from = (orient * vec4(from, 1.0)).xyz; 
     from -= gridSize / 2;
     from *= scale;
+    from = (orient * vec4(from, 1.0)).xyz; 
 
     vec4 eps = vec4(-sign(from) / Bounds[i].xyz, 0.0);
     vec3 border = from / Bounds[i].xyz;

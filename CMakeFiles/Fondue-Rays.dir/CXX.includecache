@@ -75,14 +75,18 @@ assimp/postprocess.h
 /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/shader.h
 ../../../maths/maths.h
 /home/saul/proj/Fondue-Rays/Fondue-core/src/maths/maths.h
-../renderers/voxelizer.h
-/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/voxelizer.h
+../renderers/modelvoxelizer.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/modelvoxelizer.h
 iostream
 -
 vector
 -
 cassert
 -
+
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/modelvoxelizer.h
+renderpass.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
 
 /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/raymarch.h
 renderpass.h
@@ -91,8 +95,12 @@ renderpass.h
 /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/raytracer.h
 raymarch.h
 /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/raymarch.h
-voxelizer.h
-/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/voxelizer.h
+terrain.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/terrain.h
+scenevoxelizer.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/scenevoxelizer.h
+terrainvoxelizer.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/terrainvoxelizer.h
 
 /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
 glad/glad.h
@@ -124,7 +132,15 @@ rprimitives.h
 glad/glad.h
 -
 
-/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/voxelizer.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/scenevoxelizer.h
+renderpass.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
+
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/terrain.h
+renderpass.h
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
+
+/home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/terrainvoxelizer.h
 renderpass.h
 /home/saul/proj/Fondue-Rays/Fondue-core/src/graphics/3d/renderers/renderpass.h
 

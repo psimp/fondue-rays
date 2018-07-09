@@ -538,7 +538,7 @@ GLFW_USE_WAYLAND:BOOL=OFF
 GLFW_VULKAN_STATIC:BOOL=OFF
 
 //Path to a program.
-HGCOMMAND:FILEPATH=HGCOMMAND-NOTFOUND
+HGCOMMAND:FILEPATH=/usr/bin/hg
 
 //The file that corresponds to the il (system?) utility library.
 ILUT_LIBRARIES:FILEPATH=ILUT_LIBRARIES-NOTFOUND
@@ -572,7 +572,7 @@ MEMORYCHECK_COMMAND:FILEPATH=/usr/bin/valgrind
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
 //Path to a file.
-OPENGL_EGL_INCLUDE_DIR:PATH=OPENGL_EGL_INCLUDE_DIR-NOTFOUND
+OPENGL_EGL_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a file.
 OPENGL_GLX_INCLUDE_DIR:PATH=/usr/include
@@ -587,7 +587,7 @@ OPENGL_egl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libEGL.so
 OPENGL_gl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGL.so
 
 //Path to a library.
-OPENGL_glu_LIBRARY:FILEPATH=OPENGL_glu_LIBRARY-NOTFOUND
+OPENGL_glu_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLU.so
 
 //Path to a library.
 OPENGL_glx_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLX.so
@@ -637,8 +637,14 @@ ProtoEnginecore_SOURCE_DIR:STATIC=/home/saul/proj/ProtoEngine/ProtoEngine-core
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:STRING=
 
+//The directory containing a CMake configuration file for Qt5Core.
+Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
+
+//The directory containing a CMake configuration file for Qt5Gui.
+Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
+
 //The directory containing a CMake configuration file for Qt5Widgets.
-Qt5Widgets_DIR:PATH=Qt5Widgets_DIR-NOTFOUND
+Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
@@ -663,10 +669,10 @@ SVNCOMMAND:FILEPATH=SVNCOMMAND-NOTFOUND
 SYSTEM_IRRXML:BOOL=OFF
 
 //Path to a file.
-VULKAN_INCLUDE_DIR:PATH=VULKAN_INCLUDE_DIR-NOTFOUND
+VULKAN_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-VULKAN_LIBRARY:FILEPATH=VULKAN_LIBRARY-NOTFOUND
+VULKAN_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libvulkan.so
 
 //Path to a file.
 X11_ICE_INCLUDE_PATH:PATH=/usr/include
@@ -1100,6 +1106,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding Vulkan
+FIND_PACKAGE_MESSAGE_DETAILS_Vulkan:INTERNAL=[/usr/lib/x86_64-linux-gnu/libvulkan.so][/usr/include][v()]
 //Details about finding X11
 FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/usr/lib/x86_64-linux-gnu/libX11.so][/usr/include]
 //Details about finding rt

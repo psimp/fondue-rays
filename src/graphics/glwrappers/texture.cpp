@@ -2,7 +2,7 @@
 
 namespace Fondue { namespace graphics {
 
-    Texture::Texture(const BYTE* data, size_t width, size_t height, GLuint binding)
+    Texture::Texture(const BYTE* data, size_t width, size_t height, GLuint binding, GLenum edgeCase, GLenum filtering)
         : mWidth(width), mHeight(height), mBinding(binding)
     {
         glActiveTexture(GL_TEXTURE0 + mBinding);
@@ -10,13 +10,13 @@ namespace Fondue { namespace graphics {
         glBindTexture(GL_TEXTURE_2D, mTID);
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, mWidth, mHeight, 0, GL_RGB, GL_FLOAT, data);
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, edgeCase);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, edgeCase);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filtering);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filtering);
     }
 
-    Texture::Texture(const std::string& filename, GLuint binding)
+    Texture::Texture(const std::string& filename, GLuint binding, GLenum edgeCase, GLenum filtering)
         : mBinding(binding)
     {
         FREE_IMAGE_FORMAT format;
@@ -31,10 +31,10 @@ namespace Fondue { namespace graphics {
         else if(format == FIF_HDR) glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, mWidth, mHeight, 0, GL_RGB, GL_FLOAT, pixels);
         else throw std::runtime_error("Image format not recognized!");
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, edgeCase);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, edgeCase);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filtering);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filtering);
     }
 
     Texture::~Texture()
@@ -53,6 +53,12 @@ namespace Fondue { namespace graphics {
     {
         glActiveTexture(GL_TEXTURE0 + mBinding);
         glBindTexture(GL_TEXTURE_2D, 0);
+    }
+
+    void Texture::generateMipMaps() const
+    {
+        glActiveTexture(GL_TEXTURE0 + mBinding);
+        glGenerateMipmap(GL_TEXTURE_2D);
     }
 
     void Texture::save_binaries(const std::string& fileOut) const

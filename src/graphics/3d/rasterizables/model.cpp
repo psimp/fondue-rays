@@ -3,7 +3,7 @@
 namespace Fondue { namespace graphics {
 
     void model_importer::load_model(const std::string& path, TextureArray* textureDestination3C, TextureArray* textureDestination1C,
-                                      Batch* vertexDestination, Voxelizer* voxelizer)
+                                      Batch* vertexDestination, ModelVoxelizer *voxelizer)
     {
         TEMP_textureDestination_3C = textureDestination3C;
         TEMP_textureDestination_1C = textureDestination1C;

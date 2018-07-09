@@ -8,10 +8,13 @@ class Rays : public Engine<Rays>
 
 private:
 
-    TexturedBatch mesh{2};
+    TexturedBatch mesh{22};
 
-    Voxelizer voxelizer{"src/shaders/gensdf.fs"};
-    Texture noise{"res/noise.jpg", NOISE_MAP};
+    ModelVoxelizer voxelizer;
+
+    Texture ch0{"res/o1.jpg", CH0_MAP, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR};
+    Texture ch1{"res/rgbnoise.jpg", CH1_MAP, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR};
+    Texture ch3{"res/rgbnoise.jpg", CH3_MAP, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR};
 
     Camera camera{maths::vec3(0.0f, 0.0f, 0.0f), maths::mat4::perspective(45.0f, SCREEN_WIDTH / SCREEN_HEIGHT, 0.1f, 10000.0f)};
 
@@ -35,11 +38,97 @@ public:
     {
         View::init_viewspace_bbox_ubos();
 
+        ch0.generateMipMaps();
+        ch1.generateMipMaps();
+        ch3.generateMipMaps();
+
         model_importer::load_model("res/models/tiger/tiger.obj", nullptr, nullptr, &mesh, &voxelizer);
+
         s0 = mesh.add_instance();
         entity_manager::place_entity(s0, 0,0,0, 1.0f);
-        s1 = mesh.add_instance();
-        entity_manager::place_entity(s1, 10,125,0, 1.0f);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,0,0, 1.0f);
+        entity_manager::abs_rotate(s0, 90, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,0,0, 1.0f);
+        entity_manager::abs_rotate(s0, 180, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,0,0, 1.0f);
+        entity_manager::abs_rotate(s0, 270, 0, 1, 0);
+
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,100,0, 1.0f);
+        entity_manager::abs_rotate(s0, 10, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,100,0, 1.0f);
+        entity_manager::abs_rotate(s0, 70, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,100,0, 1.0f);
+        entity_manager::abs_rotate(s0, 130, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,100,0, 1.0f);
+        entity_manager::abs_rotate(s0, 190, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,100,0, 1.0f);
+        entity_manager::abs_rotate(s0, 250, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,100,0, 1.0f);
+        entity_manager::abs_rotate(s0, 310, 0, 1, 0);
+
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 20, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 50, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 80, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 110, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 140, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 170, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 200, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 230, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 260, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 290, 0, 1, 0);
+
+        s0 = mesh.add_instance();
+        entity_manager::place_entity(s0, 0,200,0, 1.0f);
+        entity_manager::abs_rotate(s0, 350, 0, 1, 0);
+
 
         mWindow.captureCursor();
         View::updateViewSpace();
@@ -82,12 +171,12 @@ public:
             GUIEnabled = !GUIEnabled;
         }
 
-        View::updateViewSpace();
+        //View::updateViewSpace();
 	}
 
     void render()
     {
-        renderer.draw(getCurrentFrame());
+        renderer.draw(getTimeElapsed());
 	}
 
     Raytracer getRenderer() const;

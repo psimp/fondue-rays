@@ -9,7 +9,7 @@
 #include "../../glwrappers/texturearray.h"
 #include "../../shader.h"
 #include "../../../maths/maths.h"
-#include "../renderers/voxelizer.h"
+#include "../renderers/modelvoxelizer.h"
 
 #include <iostream>
 #include <vector>
@@ -112,7 +112,7 @@ namespace Fondue {	namespace graphics {
                                           const aiScene& scene, std::vector<BoneInfo> &BoneInfos);
 
             static void load_model(const std::string& path, TextureArray *textureDestination, TextureArray *textureDestination1C,
-                                        Batch *vertexDestination, Voxelizer *Voxelizer);
+                                        Batch *vertexDestination, ModelVoxelizer *Voxelizer);
 
     private:
         model_importer() { }
